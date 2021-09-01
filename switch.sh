@@ -1,3 +1,5 @@
+#! /bin/bash
+
 operate=$1
 
 case $operate in
