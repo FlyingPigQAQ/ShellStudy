@@ -74,26 +74,26 @@ fi
 - 相对[]拓展了以下运算符的支持
 
 
-|运算符|含义|
-|--|--|
-|id++ id--|variable post-increment and post-decrement|
-|++id --id|variable pre-increment and pre-decrement|
-|- +|unary minus and plus|
-|! ~|logical and bitwise negation|
-|**|exponentiation|
-|* / %|multiplication, division, remainder|
-|+ -|addition, subtraction|
-|<< >>|left and right bitwise shifts|
-|<= >= < >|comparison|
-|== !=|equality and inequality|
-|&|bitwise AND|
-|^|bitwise exclusive OR|
-|\||bitwise OR|
-|&&|logical AND|
-| \|\| |logical OR|
-|expr ? expr : expr|conditional operator|
-|= *= /= %= += -= <<= >>= &= ^= \|=|assignment|
-|expr1 , expr2|comma|
+| 运算符                             | 含义                                       |
+| ---------------------------------- | ------------------------------------------ |
+| id++ id--                          | variable post-increment and post-decrement |
+| ++id --id                          | variable pre-increment and pre-decrement   |
+| - +                                | unary minus and plus                       |
+| ! ~                                | logical and bitwise negation               |
+| **                                 | exponentiation                             |
+| * / %                              | multiplication, division, remainder        |
+| + -                                | addition, subtraction                      |
+| << >>                              | left and right bitwise shifts              |
+| <= >= < >                          | comparison                                 |
+| == !=                              | equality and inequality                    |
+| &                                  | bitwise AND                                |
+| ^                                  | bitwise exclusive OR                       |
+| \|                                 | bitwise OR                                 |
+| &&                                 | logical AND                                |
+| \|\|                               | logical OR                                 |
+| expr ? expr : expr                 | conditional operator                       |
+| = *= /= %= += -= <<= >>= &= ^= \|= | assignment                                 |
+| expr1 , expr2                      | comma                                      |
 
 参考文档: https://www.gnu.org/software/bash/manual/html_node/Shell-Arithmetic.html
 
@@ -121,44 +121,44 @@ fi
 - 支持模式匹配,如下
 
 
-|运算符|描述|
-|--|--|
-|-a file|True if file exists.|
-|-b file|True if file exists and is a block special file.|
-|-c file|True if file exists and is a character special file.|
-|-d file|True if file exists and is a directory.|
-|-e file|True if file exists.|
-|-f file|True if file exists and is a regular file.|
-|-g file|True if file exists and its set-group-id bit is set.|
-|-h file|True if file exists and is a symbolic link.|
-|-k file|True if file exists and its "sticky" bit is set.|
-|-p file|True if file exists and is a named pipe (FIFO).|
-|-r file|True if file exists and is readable.|
-|-s file|True if file exists and has a size greater than zero.|
-|-t fd|True if file descriptor fd is open and refers to a terminal.|
-|-u file|True if file exists and its set-user-id bit is set.|
-|-w file|True if file exists and is writable.|
-|-x file|True if file exists and is executable.|
-|-G file|True if file exists and is owned by the effective group id.|
-|-L file|True if file exists and is a symbolic link.|
-|-N file|True if file exists and has been modified since it was last read.|
-|-O file|True if file exists and is owned by the effective user id.|
-|-S file|True if file exists and is a socket.|
-|file1 -ef file2|True if file1 and file2 refer to the same device and inode numbers.|
-|file1 -nt file2|True if file1 is newer (according to modification date) than file2, or if file1 exists and file2 does not.|
-|file1 -ot file2|True if file1 is older than file2, or if file2 exists and file1 does not.|
-|-o optname|True if the shell option optname is enabled. The list of options appears in the description of the -o option to the set builtin (see The Set Builtin).|
-|-v varname|True if the shell variable varname is set (has been assigned a value).|
-|-R varname|True if the shell variable varname is set and is a name reference.|
-|-z string|True if the length of string is zero.|
-|-n string||
-|string|True if the length of string is non-zero.|
-|string1 == string2||
-|string1 = string2|True if the strings are equal. When used with the [[ command, this performs pattern matching as described above (see Conditional Constructs).‘=’ should be used with the test command for POSIX conformance.|
-|string1 != string2|True if the strings are not equal.|
-|string1 < string2|True if string1 sorts before string2 lexicographically.|
-|string1 > string2|True if string1 sorts after string2 lexicographically.|
-|arg1 OP arg2|OP is one of ‘-eq’, ‘-ne’, ‘-lt’, ‘-le’, ‘-gt’, or ‘-ge’. These arithmetic binary operators return true if arg1 is equal to, not equal to, less than, less than or equal to, greater than, or greater than or equal to arg2, respectively. Arg1 and arg2 may be positive or negative integers. When used with the [[ command, Arg1 and Arg2 are evaluated as arithmetic expressions (see Shell Arithmetic).|
+| 运算符             | 描述                                                                                                                                                                                                                                                                                                                                                                                                        |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| -a file            | True if file exists.                                                                                                                                                                                                                                                                                                                                                                                        |
+| -b file            | True if file exists and is a block special file.                                                                                                                                                                                                                                                                                                                                                            |
+| -c file            | True if file exists and is a character special file.                                                                                                                                                                                                                                                                                                                                                        |
+| -d file            | True if file exists and is a directory.                                                                                                                                                                                                                                                                                                                                                                     |
+| -e file            | True if file exists.                                                                                                                                                                                                                                                                                                                                                                                        |
+| -f file            | True if file exists and is a regular file.                                                                                                                                                                                                                                                                                                                                                                  |
+| -g file            | True if file exists and its set-group-id bit is set.                                                                                                                                                                                                                                                                                                                                                        |
+| -h file            | True if file exists and is a symbolic link.                                                                                                                                                                                                                                                                                                                                                                 |
+| -k file            | True if file exists and its "sticky" bit is set.                                                                                                                                                                                                                                                                                                                                                            |
+| -p file            | True if file exists and is a named pipe (FIFO).                                                                                                                                                                                                                                                                                                                                                             |
+| -r file            | True if file exists and is readable.                                                                                                                                                                                                                                                                                                                                                                        |
+| -s file            | True if file exists and has a size greater than zero.                                                                                                                                                                                                                                                                                                                                                       |
+| -t fd              | True if file descriptor fd is open and refers to a terminal.                                                                                                                                                                                                                                                                                                                                                |
+| -u file            | True if file exists and its set-user-id bit is set.                                                                                                                                                                                                                                                                                                                                                         |
+| -w file            | True if file exists and is writable.                                                                                                                                                                                                                                                                                                                                                                        |
+| -x file            | True if file exists and is executable.                                                                                                                                                                                                                                                                                                                                                                      |
+| -G file            | True if file exists and is owned by the effective group id.                                                                                                                                                                                                                                                                                                                                                 |
+| -L file            | True if file exists and is a symbolic link.                                                                                                                                                                                                                                                                                                                                                                 |
+| -N file            | True if file exists and has been modified since it was last read.                                                                                                                                                                                                                                                                                                                                           |
+| -O file            | True if file exists and is owned by the effective user id.                                                                                                                                                                                                                                                                                                                                                  |
+| -S file            | True if file exists and is a socket.                                                                                                                                                                                                                                                                                                                                                                        |
+| file1 -ef file2    | True if file1 and file2 refer to the same device and inode numbers.                                                                                                                                                                                                                                                                                                                                         |
+| file1 -nt file2    | True if file1 is newer (according to modification date) than file2, or if file1 exists and file2 does not.                                                                                                                                                                                                                                                                                                  |
+| file1 -ot file2    | True if file1 is older than file2, or if file2 exists and file1 does not.                                                                                                                                                                                                                                                                                                                                   |
+| -o optname         | True if the shell option optname is enabled. The list of options appears in the description of the -o option to the set builtin (see The Set Builtin).                                                                                                                                                                                                                                                      |
+| -v varname         | True if the shell variable varname is set (has been assigned a value).                                                                                                                                                                                                                                                                                                                                      |
+| -R varname         | True if the shell variable varname is set and is a name reference.                                                                                                                                                                                                                                                                                                                                          |
+| -z string          | True if the length of string is zero.                                                                                                                                                                                                                                                                                                                                                                       |
+| -n string          |                                                                                                                                                                                                                                                                                                                                                                                                             |
+| string             | True if the length of string is non-zero.                                                                                                                                                                                                                                                                                                                                                                   |
+| string1 == string2 |                                                                                                                                                                                                                                                                                                                                                                                                             |
+| string1 = string2  | True if the strings are equal. When used with the [[ command, this performs pattern matching as described above (see Conditional Constructs).‘=’ should be used with the test command for POSIX conformance.                                                                                                                                                                                                |
+| string1 != string2 | True if the strings are not equal.                                                                                                                                                                                                                                                                                                                                                                          |
+| string1 < string2  | True if string1 sorts before string2 lexicographically.                                                                                                                                                                                                                                                                                                                                                     |
+| string1 > string2  | True if string1 sorts after string2 lexicographically.                                                                                                                                                                                                                                                                                                                                                      |
+| arg1 OP arg2       | OP is one of ‘-eq’, ‘-ne’, ‘-lt’, ‘-le’, ‘-gt’, or ‘-ge’. These arithmetic binary operators return true if arg1 is equal to, not equal to, less than, less than or equal to, greater than, or greater than or equal to arg2, respectively. Arg1 and arg2 may be positive or negative integers. When used with the [[ command, Arg1 and Arg2 are evaluated as arithmetic expressions (see Shell Arithmetic). |
 
 参考文档: https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html
 ```shell
@@ -174,3 +174,22 @@ else
 fi
 
 ```
+
+## 7. $[] 和 $(())区别
+- 都是进行算术运算的
+- 两者都支持变量不加$
+
+**注意：优先使用\$(()),因为\$[]并没有在bash手册中提及**
+
+```shell
+a1=10
+a2='20'
+echo $[$a1+$a2] #支持
+echo $[a1+a2] #支持
+echo $((a1+a2)) #优先使用，支持
+echo $(($a1+$a2)) #优先使用，支持
+```
+
+## 8. Bash官方文档
+- https://www.gnu.org/software/bash/manual/
+- https://www.gnu.org/software/bash/manual/html_node/index.html

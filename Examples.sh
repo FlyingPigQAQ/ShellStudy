@@ -37,4 +37,12 @@ else
    echo "文件不存在"
 fi
 
+a1=10
+a2='20'
+echo $[$a1+$a2] #支持
+echo $[a1+a2] #支持
+echo $((a1+a2)) #支持
+echo $(($a1+$a2)) #支持
+
+echo $[++a1] #支持
 
