@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /usr/bin/env bash
 
 echo "脚本名 $0"
 echo "第一个参数 $1"

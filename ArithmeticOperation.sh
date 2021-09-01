@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /usr/bin/env bash
 
 <<comment
 原生 bash 不支持简单的数学运算，但是可以通过其他命令来实现，例如expr。

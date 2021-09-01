@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /usr/bin/env bash
 
 age=13
 echo ${age}

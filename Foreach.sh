@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /usr/bin/env bash
 
 #打印根路径下的文件
 for item in $(ls /); do
@@ -13,6 +13,11 @@ done
 
 for item in {1..10}; do
     echo ${item}
+done
+
+# 步长 bash4 版本之前不支持
+for item in {1..10..2}; do
+    echo $item
 done
 
 # while

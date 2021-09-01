@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /usr/bin/env bash
 words="we are good friends"
 echo "原始字符串：${words}"
 
