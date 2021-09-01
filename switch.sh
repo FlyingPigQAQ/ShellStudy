@@ -16,3 +16,4 @@ case $operate in
     echo "异常指令"
     ;;
 esac
+
