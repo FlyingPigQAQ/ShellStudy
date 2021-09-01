@@ -21,3 +21,13 @@ for item in {1..10..2}; do
 done
 
 # while
+
+sum=0
+i=1
+while [ $i -le 10 ]; do
+    sum=$((sum + i))
+    i=$((i + 1))
+done
+echo "$sum $i"
+
+# break continue
