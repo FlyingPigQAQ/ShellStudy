@@ -21,14 +21,23 @@ Bash 由于易用和免费，在日常工作中被广泛使用。同时，Bash �
 /usr/bin/bash
 ```
 
-## 2. 查看bash版本 **bash -version**
+## 2. 查看bash版本 
+
+**bash -version**
+
+```shell
+$ bash -version
+
+GNU bash, version 3.2.57(1)-release (x86_64-apple-darwin21)
+Copyright (C) 2007 Free Software Foundation, Inc.
+```
 
 
 ## 3. 正确编写shell头文件
 
-**#! /usr/bin/env bash** 
+**#!/usr/bin/env bash** 
 
-让程序通过path去查找第一个遇到的bash,避免有的系统bash存放于其他目录，而不是/bin/目录
+让程序通过$PATH（路径环境变量）去查找第一个遇到的shell解释器，此做法避免各系统间系统shell解释器存放于不同的目录。而不是写死相应目录，例如：`#! /bin/bash`就是假设系统默认的bash解释器在/bin/中。
 
 ## 4. ${}用法
 ${}指明变量边界.
@@ -54,8 +63,11 @@ uver=$(uname -r)
 uver=`uname -r`
 ```
 ## 6. [ ]、(( )) 和 [[ ]]区别
-三者都是test命令的一种表现形式 `test num -ge 100`
+三者都是test命令的表现形式 `test num -ge 100`，也就是三者本质都是test命令
+
 ### 6.1 [ ]
+[] 是 POSIX 标准的测试命令, 支持基本的文件和字符串测试操作符，但不支持复杂的逻辑操作。
+
 - []需要括号的两个内侧都有空格 
 - []比较类型必须是数字类型
 - 运算符需要转义
@@ -66,6 +78,17 @@ if [ $num -ge 100 ];then
   echo "big than special number"
 fi
 ```
+
+```shell
+# 导出一个环境变量NVM_DIR，它代表了用户根目录下的.nvm目录
+export NVM_DIR="$HOME/.nvm"
+# -s 文件是否存在且内容不为空
+# [] 是test命令
+# . 是source命令
+# 所以整行命令的意思是：如果$NVM_DIR/nvm.sh脚本存在且内容不为空，就source "$NVM_DIR/nvm.sh"执行这个脚本
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+```
 ### 6.2 (( ))
 - 两侧对空格不再有要求
 - 比较类型必须是数字
@@ -74,7 +97,7 @@ fi
 - 相对[]拓展了以下运算符的支持
 
 
-| 运算符                             | 含义                                       |
+| 运算符                              | 含义                                        |
 | ---------------------------------- | ------------------------------------------ |
 | id++ id--                          | variable post-increment and post-decrement |
 | ++id --id                          | variable pre-increment and pre-decrement   |
@@ -114,6 +137,8 @@ else
 fi
 ```
 ### 6.3 [[ ]]
+
+[[ ]] 是 Bash 和其他一些现代 Shell（如 Zsh）提供的扩展测试命令。 支持更多的操作符和复杂的逻辑操作，如正则表达式匹配和逻辑组合。
 - 需要括号的两个内侧都有空格 
 - 比较类型**支持**数字和**字符串**
 - 运算符转义和不转义都可正常使用
@@ -173,6 +198,10 @@ else
    echo "文件不存在"
 fi
 
+```
+
+```shell
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
 ```
 
 ## 7. $[] 和 $(())区别
