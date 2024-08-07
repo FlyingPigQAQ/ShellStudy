@@ -11,7 +11,7 @@ Linux 的 **Shell 解释器** 种类众多，一个系统可以存在多个 shel
 
 Bash 由于易用和免费，在日常工作中被广泛使用。同时，Bash 也是大多数Linux 系统默认的 Shell。
 
-可以使用以下方式查看已经注册的Shell解释器:
+<a id="registered-shell">可以使用以下方式查看已经注册的Shell解释器:</a>
 
 ```shell
 [root@localhost ~]# cat /etc/shells
